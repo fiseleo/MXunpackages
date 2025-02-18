@@ -29,12 +29,12 @@ public struct MiniGameDefenseStageExcel : IFlatbufferObject
 #endif
   public byte[] GetNameArray() { return __p.__vector_as_array<byte>(6); }
   public long EventContentId { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public Plana.FlatData.StageDifficulty StageDifficulty_ { get { int o = __p.__offset(10); return o != 0 ? (Plana.FlatData.StageDifficulty)__p.bb.GetInt(o + __p.bb_pos) : Plana.FlatData.StageDifficulty.None; } }
+  public Plana.FlatData.StageDifficulty StageDifficulty { get { int o = __p.__offset(10); return o != 0 ? (Plana.FlatData.StageDifficulty)__p.bb.GetInt(o + __p.bb_pos) : Plana.FlatData.StageDifficulty.None; } }
   public uint StageDifficultyLocalize { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetUint(o + __p.bb_pos) : (uint)0; } }
   public int StageNumber { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int StageDisplay { get { int o = __p.__offset(16); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public long PrevStageId { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public Plana.FlatData.EchelonExtensionType EchelonExtensionType_ { get { int o = __p.__offset(20); return o != 0 ? (Plana.FlatData.EchelonExtensionType)__p.bb.GetInt(o + __p.bb_pos) : Plana.FlatData.EchelonExtensionType.Base; } }
+  public Plana.FlatData.EchelonExtensionType EchelonExtensionType { get { int o = __p.__offset(20); return o != 0 ? (Plana.FlatData.EchelonExtensionType)__p.bb.GetInt(o + __p.bb_pos) : Plana.FlatData.EchelonExtensionType.Base; } }
   public long BattleDuration { get { int o = __p.__offset(22); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public Plana.FlatData.ParcelType StageEnterCostType { get { int o = __p.__offset(24); return o != 0 ? (Plana.FlatData.ParcelType)__p.bb.GetInt(o + __p.bb_pos) : Plana.FlatData.ParcelType.None; } }
   public long StageEnterCostId { get { int o = __p.__offset(26); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
@@ -56,10 +56,10 @@ public struct MiniGameDefenseStageExcel : IFlatbufferObject
   public ArraySegment<byte>? GetClearScenarioGroupIdBytes() { return __p.__vector_as_arraysegment(34); }
 #endif
   public long[] GetClearScenarioGroupIdArray() { return __p.__vector_as_array<long>(34); }
-  public Plana.FlatData.StageTopography StageTopography_ { get { int o = __p.__offset(36); return o != 0 ? (Plana.FlatData.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : Plana.FlatData.StageTopography.Street; } }
+  public Plana.FlatData.StageTopography StageTopography { get { int o = __p.__offset(36); return o != 0 ? (Plana.FlatData.StageTopography)__p.bb.GetInt(o + __p.bb_pos) : Plana.FlatData.StageTopography.Street; } }
   public int RecommandLevel { get { int o = __p.__offset(38); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public long GroundID { get { int o = __p.__offset(40); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public Plana.FlatData.ContentType ContentType_ { get { int o = __p.__offset(42); return o != 0 ? (Plana.FlatData.ContentType)__p.bb.GetInt(o + __p.bb_pos) : Plana.FlatData.ContentType.None; } }
+  public Plana.FlatData.ContentType ContentType { get { int o = __p.__offset(42); return o != 0 ? (Plana.FlatData.ContentType)__p.bb.GetInt(o + __p.bb_pos) : Plana.FlatData.ContentType.None; } }
   public Plana.FlatData.StarGoalType StarGoal(int j) { int o = __p.__offset(44); return o != 0 ? (Plana.FlatData.StarGoalType)__p.bb.GetInt(__p.__vector(o) + j * 4) : (Plana.FlatData.StarGoalType)0; }
   public int StarGoalLength { get { int o = __p.__offset(44); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
@@ -92,12 +92,12 @@ public struct MiniGameDefenseStageExcel : IFlatbufferObject
       long Id = 0,
       StringOffset NameOffset = default(StringOffset),
       long EventContentId = 0,
-      Plana.FlatData.StageDifficulty StageDifficulty_ = Plana.FlatData.StageDifficulty.None,
+      Plana.FlatData.StageDifficulty StageDifficulty = Plana.FlatData.StageDifficulty.None,
       uint StageDifficultyLocalize = 0,
       int StageNumber = 0,
       int StageDisplay = 0,
       long PrevStageId = 0,
-      Plana.FlatData.EchelonExtensionType EchelonExtensionType_ = Plana.FlatData.EchelonExtensionType.Base,
+      Plana.FlatData.EchelonExtensionType EchelonExtensionType = Plana.FlatData.EchelonExtensionType.Base,
       long BattleDuration = 0,
       Plana.FlatData.ParcelType StageEnterCostType = Plana.FlatData.ParcelType.None,
       long StageEnterCostId = 0,
@@ -105,10 +105,10 @@ public struct MiniGameDefenseStageExcel : IFlatbufferObject
       long EventContentStageRewardId = 0,
       VectorOffset EnterScenarioGroupIdOffset = default(VectorOffset),
       VectorOffset ClearScenarioGroupIdOffset = default(VectorOffset),
-      Plana.FlatData.StageTopography StageTopography_ = Plana.FlatData.StageTopography.Street,
+      Plana.FlatData.StageTopography StageTopography = Plana.FlatData.StageTopography.Street,
       int RecommandLevel = 0,
       long GroundID = 0,
-      Plana.FlatData.ContentType ContentType_ = Plana.FlatData.ContentType.None,
+      Plana.FlatData.ContentType ContentType = Plana.FlatData.ContentType.None,
       VectorOffset StarGoalOffset = default(VectorOffset),
       VectorOffset StarGoalAmountOffset = default(VectorOffset),
       StringOffset DefenseFormationBGPrefabOffset = default(StringOffset),
@@ -131,18 +131,18 @@ public struct MiniGameDefenseStageExcel : IFlatbufferObject
     MiniGameDefenseStageExcel.AddDefenseFormationBGPrefab(builder, DefenseFormationBGPrefabOffset);
     MiniGameDefenseStageExcel.AddStarGoalAmount(builder, StarGoalAmountOffset);
     MiniGameDefenseStageExcel.AddStarGoal(builder, StarGoalOffset);
-    MiniGameDefenseStageExcel.AddContentType_(builder, ContentType_);
+    MiniGameDefenseStageExcel.AddContentType(builder, ContentType);
     MiniGameDefenseStageExcel.AddRecommandLevel(builder, RecommandLevel);
-    MiniGameDefenseStageExcel.AddStageTopography_(builder, StageTopography_);
+    MiniGameDefenseStageExcel.AddStageTopography(builder, StageTopography);
     MiniGameDefenseStageExcel.AddClearScenarioGroupId(builder, ClearScenarioGroupIdOffset);
     MiniGameDefenseStageExcel.AddEnterScenarioGroupId(builder, EnterScenarioGroupIdOffset);
     MiniGameDefenseStageExcel.AddStageEnterCostAmount(builder, StageEnterCostAmount);
     MiniGameDefenseStageExcel.AddStageEnterCostType(builder, StageEnterCostType);
-    MiniGameDefenseStageExcel.AddEchelonExtensionType_(builder, EchelonExtensionType_);
+    MiniGameDefenseStageExcel.AddEchelonExtensionType(builder, EchelonExtensionType);
     MiniGameDefenseStageExcel.AddStageDisplay(builder, StageDisplay);
     MiniGameDefenseStageExcel.AddStageNumber(builder, StageNumber);
     MiniGameDefenseStageExcel.AddStageDifficultyLocalize(builder, StageDifficultyLocalize);
-    MiniGameDefenseStageExcel.AddStageDifficulty_(builder, StageDifficulty_);
+    MiniGameDefenseStageExcel.AddStageDifficulty(builder, StageDifficulty);
     MiniGameDefenseStageExcel.AddName(builder, NameOffset);
     return MiniGameDefenseStageExcel.EndMiniGameDefenseStageExcel(builder);
   }
@@ -151,12 +151,12 @@ public struct MiniGameDefenseStageExcel : IFlatbufferObject
   public static void AddId(FlatBufferBuilder builder, long id) { builder.AddLong(0, id, 0); }
   public static void AddName(FlatBufferBuilder builder, StringOffset nameOffset) { builder.AddOffset(1, nameOffset.Value, 0); }
   public static void AddEventContentId(FlatBufferBuilder builder, long eventContentId) { builder.AddLong(2, eventContentId, 0); }
-  public static void AddStageDifficulty_(FlatBufferBuilder builder, Plana.FlatData.StageDifficulty stageDifficulty_) { builder.AddInt(3, (int)stageDifficulty_, 0); }
+  public static void AddStageDifficulty(FlatBufferBuilder builder, Plana.FlatData.StageDifficulty stageDifficulty) { builder.AddInt(3, (int)stageDifficulty, 0); }
   public static void AddStageDifficultyLocalize(FlatBufferBuilder builder, uint stageDifficultyLocalize) { builder.AddUint(4, stageDifficultyLocalize, 0); }
   public static void AddStageNumber(FlatBufferBuilder builder, int stageNumber) { builder.AddInt(5, stageNumber, 0); }
   public static void AddStageDisplay(FlatBufferBuilder builder, int stageDisplay) { builder.AddInt(6, stageDisplay, 0); }
   public static void AddPrevStageId(FlatBufferBuilder builder, long prevStageId) { builder.AddLong(7, prevStageId, 0); }
-  public static void AddEchelonExtensionType_(FlatBufferBuilder builder, Plana.FlatData.EchelonExtensionType echelonExtensionType_) { builder.AddInt(8, (int)echelonExtensionType_, 0); }
+  public static void AddEchelonExtensionType(FlatBufferBuilder builder, Plana.FlatData.EchelonExtensionType echelonExtensionType) { builder.AddInt(8, (int)echelonExtensionType, 0); }
   public static void AddBattleDuration(FlatBufferBuilder builder, long battleDuration) { builder.AddLong(9, battleDuration, 0); }
   public static void AddStageEnterCostType(FlatBufferBuilder builder, Plana.FlatData.ParcelType stageEnterCostType) { builder.AddInt(10, (int)stageEnterCostType, 0); }
   public static void AddStageEnterCostId(FlatBufferBuilder builder, long stageEnterCostId) { builder.AddLong(11, stageEnterCostId, 0); }
@@ -174,10 +174,10 @@ public struct MiniGameDefenseStageExcel : IFlatbufferObject
   public static VectorOffset CreateClearScenarioGroupIdVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateClearScenarioGroupIdVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartClearScenarioGroupIdVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddStageTopography_(FlatBufferBuilder builder, Plana.FlatData.StageTopography stageTopography_) { builder.AddInt(16, (int)stageTopography_, 0); }
+  public static void AddStageTopography(FlatBufferBuilder builder, Plana.FlatData.StageTopography stageTopography) { builder.AddInt(16, (int)stageTopography, 0); }
   public static void AddRecommandLevel(FlatBufferBuilder builder, int recommandLevel) { builder.AddInt(17, recommandLevel, 0); }
   public static void AddGroundID(FlatBufferBuilder builder, long groundID) { builder.AddLong(18, groundID, 0); }
-  public static void AddContentType_(FlatBufferBuilder builder, Plana.FlatData.ContentType contentType_) { builder.AddInt(19, (int)contentType_, 0); }
+  public static void AddContentType(FlatBufferBuilder builder, Plana.FlatData.ContentType contentType) { builder.AddInt(19, (int)contentType, 0); }
   public static void AddStarGoal(FlatBufferBuilder builder, VectorOffset starGoalOffset) { builder.AddOffset(20, starGoalOffset.Value, 0); }
   public static VectorOffset CreateStarGoalVector(FlatBufferBuilder builder, Plana.FlatData.StarGoalType[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateStarGoalVectorBlock(FlatBufferBuilder builder, Plana.FlatData.StarGoalType[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
@@ -205,16 +205,16 @@ public struct MiniGameDefenseStageExcel : IFlatbufferObject
     return _o;
   }
   public void UnPackTo(MiniGameDefenseStageExcelT _o) {
-        byte[] key = TableEncryptionService.CreateKey("MiniGameDefenseStage");
+		byte[] key = TableEncryptionService.CreateKey("MiniGameDefenseStage");
     _o.Id = TableEncryptionService.Convert(this.Id, key);
     _o.Name = TableEncryptionService.Convert(this.Name, key);
     _o.EventContentId = TableEncryptionService.Convert(this.EventContentId, key);
-    _o.StageDifficulty_ = TableEncryptionService.Convert(this.StageDifficulty_, key);
+    _o.StageDifficulty = TableEncryptionService.Convert(this.StageDifficulty, key);
     _o.StageDifficultyLocalize = TableEncryptionService.Convert(this.StageDifficultyLocalize, key);
     _o.StageNumber = TableEncryptionService.Convert(this.StageNumber, key);
     _o.StageDisplay = TableEncryptionService.Convert(this.StageDisplay, key);
     _o.PrevStageId = TableEncryptionService.Convert(this.PrevStageId, key);
-    _o.EchelonExtensionType_ = TableEncryptionService.Convert(this.EchelonExtensionType_, key);
+    _o.EchelonExtensionType = TableEncryptionService.Convert(this.EchelonExtensionType, key);
     _o.BattleDuration = TableEncryptionService.Convert(this.BattleDuration, key);
     _o.StageEnterCostType = TableEncryptionService.Convert(this.StageEnterCostType, key);
     _o.StageEnterCostId = TableEncryptionService.Convert(this.StageEnterCostId, key);
@@ -224,10 +224,10 @@ public struct MiniGameDefenseStageExcel : IFlatbufferObject
     for (var _j = 0; _j < this.EnterScenarioGroupIdLength; ++_j) {_o.EnterScenarioGroupId.Add(TableEncryptionService.Convert(this.EnterScenarioGroupId(_j), key));}
     _o.ClearScenarioGroupId = new List<long>();
     for (var _j = 0; _j < this.ClearScenarioGroupIdLength; ++_j) {_o.ClearScenarioGroupId.Add(TableEncryptionService.Convert(this.ClearScenarioGroupId(_j), key));}
-    _o.StageTopography_ = TableEncryptionService.Convert(this.StageTopography_, key);
+    _o.StageTopography = TableEncryptionService.Convert(this.StageTopography, key);
     _o.RecommandLevel = TableEncryptionService.Convert(this.RecommandLevel, key);
     _o.GroundID = TableEncryptionService.Convert(this.GroundID, key);
-    _o.ContentType_ = TableEncryptionService.Convert(this.ContentType_, key);
+    _o.ContentType = TableEncryptionService.Convert(this.ContentType, key);
     _o.StarGoal = new List<Plana.FlatData.StarGoalType>();
     for (var _j = 0; _j < this.StarGoalLength; ++_j) {_o.StarGoal.Add(TableEncryptionService.Convert(this.StarGoal(_j), key));}
     _o.StarGoalAmount = new List<int>();
@@ -267,12 +267,12 @@ public struct MiniGameDefenseStageExcel : IFlatbufferObject
       _o.Id,
       _Name,
       _o.EventContentId,
-      _o.StageDifficulty_,
+      _o.StageDifficulty,
       _o.StageDifficultyLocalize,
       _o.StageNumber,
       _o.StageDisplay,
       _o.PrevStageId,
-      _o.EchelonExtensionType_,
+      _o.EchelonExtensionType,
       _o.BattleDuration,
       _o.StageEnterCostType,
       _o.StageEnterCostId,
@@ -280,10 +280,10 @@ public struct MiniGameDefenseStageExcel : IFlatbufferObject
       _o.EventContentStageRewardId,
       _EnterScenarioGroupId,
       _ClearScenarioGroupId,
-      _o.StageTopography_,
+      _o.StageTopography,
       _o.RecommandLevel,
       _o.GroundID,
-      _o.ContentType_,
+      _o.ContentType,
       _StarGoal,
       _StarGoalAmount,
       _DefenseFormationBGPrefab,
@@ -299,12 +299,12 @@ public class MiniGameDefenseStageExcelT
   public long Id { get; set; }
   public string Name { get; set; }
   public long EventContentId { get; set; }
-  public Plana.FlatData.StageDifficulty StageDifficulty_ { get; set; }
+  public Plana.FlatData.StageDifficulty StageDifficulty { get; set; }
   public uint StageDifficultyLocalize { get; set; }
   public int StageNumber { get; set; }
   public int StageDisplay { get; set; }
   public long PrevStageId { get; set; }
-  public Plana.FlatData.EchelonExtensionType EchelonExtensionType_ { get; set; }
+  public Plana.FlatData.EchelonExtensionType EchelonExtensionType { get; set; }
   public long BattleDuration { get; set; }
   public Plana.FlatData.ParcelType StageEnterCostType { get; set; }
   public long StageEnterCostId { get; set; }
@@ -312,10 +312,10 @@ public class MiniGameDefenseStageExcelT
   public long EventContentStageRewardId { get; set; }
   public List<long> EnterScenarioGroupId { get; set; }
   public List<long> ClearScenarioGroupId { get; set; }
-  public Plana.FlatData.StageTopography StageTopography_ { get; set; }
+  public Plana.FlatData.StageTopography StageTopography { get; set; }
   public int RecommandLevel { get; set; }
   public long GroundID { get; set; }
-  public Plana.FlatData.ContentType ContentType_ { get; set; }
+  public Plana.FlatData.ContentType ContentType { get; set; }
   public List<Plana.FlatData.StarGoalType> StarGoal { get; set; }
   public List<int> StarGoalAmount { get; set; }
   public string DefenseFormationBGPrefab { get; set; }
@@ -328,12 +328,12 @@ public class MiniGameDefenseStageExcelT
     this.Id = 0;
     this.Name = null;
     this.EventContentId = 0;
-    this.StageDifficulty_ = Plana.FlatData.StageDifficulty.None;
+    this.StageDifficulty = Plana.FlatData.StageDifficulty.None;
     this.StageDifficultyLocalize = 0;
     this.StageNumber = 0;
     this.StageDisplay = 0;
     this.PrevStageId = 0;
-    this.EchelonExtensionType_ = Plana.FlatData.EchelonExtensionType.Base;
+    this.EchelonExtensionType = Plana.FlatData.EchelonExtensionType.Base;
     this.BattleDuration = 0;
     this.StageEnterCostType = Plana.FlatData.ParcelType.None;
     this.StageEnterCostId = 0;
@@ -341,10 +341,10 @@ public class MiniGameDefenseStageExcelT
     this.EventContentStageRewardId = 0;
     this.EnterScenarioGroupId = null;
     this.ClearScenarioGroupId = null;
-    this.StageTopography_ = Plana.FlatData.StageTopography.Street;
+    this.StageTopography = Plana.FlatData.StageTopography.Street;
     this.RecommandLevel = 0;
     this.GroundID = 0;
-    this.ContentType_ = Plana.FlatData.ContentType.None;
+    this.ContentType = Plana.FlatData.ContentType.None;
     this.StarGoal = null;
     this.StarGoalAmount = null;
     this.DefenseFormationBGPrefab = null;
@@ -364,12 +364,12 @@ static public class MiniGameDefenseStageExcelVerify
       && verifier.VerifyField(tablePos, 4 /*Id*/, 8 /*long*/, 8, false)
       && verifier.VerifyString(tablePos, 6 /*Name*/, false)
       && verifier.VerifyField(tablePos, 8 /*EventContentId*/, 8 /*long*/, 8, false)
-      && verifier.VerifyField(tablePos, 10 /*StageDifficulty_*/, 4 /*Plana.FlatData.StageDifficulty*/, 4, false)
+      && verifier.VerifyField(tablePos, 10 /*StageDifficulty*/, 4 /*Plana.FlatData.StageDifficulty*/, 4, false)
       && verifier.VerifyField(tablePos, 12 /*StageDifficultyLocalize*/, 4 /*uint*/, 4, false)
       && verifier.VerifyField(tablePos, 14 /*StageNumber*/, 4 /*int*/, 4, false)
       && verifier.VerifyField(tablePos, 16 /*StageDisplay*/, 4 /*int*/, 4, false)
       && verifier.VerifyField(tablePos, 18 /*PrevStageId*/, 8 /*long*/, 8, false)
-      && verifier.VerifyField(tablePos, 20 /*EchelonExtensionType_*/, 4 /*Plana.FlatData.EchelonExtensionType*/, 4, false)
+      && verifier.VerifyField(tablePos, 20 /*EchelonExtensionType*/, 4 /*Plana.FlatData.EchelonExtensionType*/, 4, false)
       && verifier.VerifyField(tablePos, 22 /*BattleDuration*/, 8 /*long*/, 8, false)
       && verifier.VerifyField(tablePos, 24 /*StageEnterCostType*/, 4 /*Plana.FlatData.ParcelType*/, 4, false)
       && verifier.VerifyField(tablePos, 26 /*StageEnterCostId*/, 8 /*long*/, 8, false)
@@ -377,10 +377,10 @@ static public class MiniGameDefenseStageExcelVerify
       && verifier.VerifyField(tablePos, 30 /*EventContentStageRewardId*/, 8 /*long*/, 8, false)
       && verifier.VerifyVectorOfData(tablePos, 32 /*EnterScenarioGroupId*/, 8 /*long*/, false)
       && verifier.VerifyVectorOfData(tablePos, 34 /*ClearScenarioGroupId*/, 8 /*long*/, false)
-      && verifier.VerifyField(tablePos, 36 /*StageTopography_*/, 4 /*Plana.FlatData.StageTopography*/, 4, false)
+      && verifier.VerifyField(tablePos, 36 /*StageTopography*/, 4 /*Plana.FlatData.StageTopography*/, 4, false)
       && verifier.VerifyField(tablePos, 38 /*RecommandLevel*/, 4 /*int*/, 4, false)
       && verifier.VerifyField(tablePos, 40 /*GroundID*/, 8 /*long*/, 8, false)
-      && verifier.VerifyField(tablePos, 42 /*ContentType_*/, 4 /*Plana.FlatData.ContentType*/, 4, false)
+      && verifier.VerifyField(tablePos, 42 /*ContentType*/, 4 /*Plana.FlatData.ContentType*/, 4, false)
       && verifier.VerifyVectorOfData(tablePos, 44 /*StarGoal*/, 4 /*Plana.FlatData.StarGoalType*/, false)
       && verifier.VerifyVectorOfData(tablePos, 46 /*StarGoalAmount*/, 4 /*int*/, false)
       && verifier.VerifyString(tablePos, 48 /*DefenseFormationBGPrefab*/, false)

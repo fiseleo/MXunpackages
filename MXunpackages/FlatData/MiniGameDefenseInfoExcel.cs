@@ -57,7 +57,7 @@ public struct MiniGameDefenseInfoExcel : IFlatbufferObject
     return _o;
   }
   public void UnPackTo(MiniGameDefenseInfoExcelT _o) {
-        byte[] key = TableEncryptionService.CreateKey("MiniGameDefenseInfo");
+		byte[] key = TableEncryptionService.CreateKey("MiniGameDefenseInfo");
     _o.EventContentId = TableEncryptionService.Convert(this.EventContentId, key);
     _o.DefenseBattleParcelType = TableEncryptionService.Convert(this.DefenseBattleParcelType, key);
     _o.DefenseBattleParcelId = TableEncryptionService.Convert(this.DefenseBattleParcelId, key);

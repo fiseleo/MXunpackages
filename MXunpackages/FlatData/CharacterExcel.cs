@@ -104,7 +104,7 @@ public struct CharacterExcel : IFlatbufferObject
   public float HpBarHeight { get { int o = __p.__offset(92); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
   public float HighlightFloaterHeight { get { int o = __p.__offset(94); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
   public float EmojiOffsetX { get { int o = __p.__offset(96); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
-  public float EmojiOffsetY { get { int o = __p.__offset(100); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
+  public float EmojiOffsetY { get { int o = __p.__offset(98); return o != 0 ? __p.bb.GetFloat(o + __p.bb_pos) : (float)0.0f; } }
   public int MoveStartFrame { get { int o = __p.__offset(100); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int MoveEndFrame { get { int o = __p.__offset(102); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public int JumpMotionFrame { get { int o = __p.__offset(104); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
@@ -118,7 +118,7 @@ public struct CharacterExcel : IFlatbufferObject
   public Plana.FlatData.Tag Tags(int j) { int o = __p.__offset(120); return o != 0 ? (Plana.FlatData.Tag)__p.bb.GetInt(__p.__vector(o) + j * 4) : (Plana.FlatData.Tag)0; }
   public int TagsLength { get { int o = __p.__offset(120); return o != 0 ? __p.__vector_len(o) : 0; } }
 #if ENABLE_SPAN_T
-  public Span<Plana.FlatData.Tag> GetTagsBytes() { return __p.__vector_as_span<Plana.FlatData.Tag>(116, 4); }
+  public Span<Plana.FlatData.Tag> GetTagsBytes() { return __p.__vector_as_span<Plana.FlatData.Tag>(120, 4); }
 #else
   public ArraySegment<byte>? GetTagsBytes() { return __p.__vector_as_arraysegment(120); }
 #endif
@@ -194,13 +194,14 @@ public struct CharacterExcel : IFlatbufferObject
       long CharacterPieceItemId = 0,
       int CharacterPieceItemAmount = 0,
       long CombineRecipeId = 0) {
-    builder.StartTable(63);
+    builder.StartTable(64);
     CharacterExcel.AddCombineRecipeId(builder, CombineRecipeId);
     CharacterExcel.AddCharacterPieceItemId(builder, CharacterPieceItemId);
     CharacterExcel.AddSecretStoneItemId(builder, SecretStoneItemId);
     CharacterExcel.AddAirUnitHeight(builder, AirUnitHeight);
     CharacterExcel.AddRandomEffectRadius(builder, RandomEffectRadius);
     CharacterExcel.AddBodyRadius(builder, BodyRadius);
+    CharacterExcel.AddMainCombatStyleId(builder, MainCombatStyleId);
     CharacterExcel.AddExternalBTId(builder, ExternalBTId);
     CharacterExcel.AddCharacterAIId(builder, CharacterAIId);
     CharacterExcel.AddPersonalityId(builder, PersonalityId);
@@ -221,9 +222,8 @@ public struct CharacterExcel : IFlatbufferObject
     CharacterExcel.AddEquipmentSlot(builder, EquipmentSlotOffset);
     CharacterExcel.AddFavorLevelupType(builder, FavorLevelupType);
     CharacterExcel.AddSpawnTemplateId(builder, SpawnTemplateId);
-    CharacterExcel.AddMainCombatStyleId(builder, MainCombatStyleId);
-    CharacterExcel.AddCombatStyleIndex(builder, CombatStyleIndex);
     CharacterExcel.AddScenarioCharacter(builder, ScenarioCharacterOffset);
+    CharacterExcel.AddCombatStyleIndex(builder, CombatStyleIndex);
     CharacterExcel.AddSquadType(builder, SquadType);
     CharacterExcel.AddStatLevelUpType(builder, StatLevelUpType);
     CharacterExcel.AddMaxStarGrade(builder, MaxStarGrade);
@@ -262,7 +262,7 @@ public struct CharacterExcel : IFlatbufferObject
     return CharacterExcel.EndCharacterExcel(builder);
   }
 
-  public static void StartCharacterExcel(FlatBufferBuilder builder) { builder.StartTable(62); }
+  public static void StartCharacterExcel(FlatBufferBuilder builder) { builder.StartTable(64); }
   public static void AddId(FlatBufferBuilder builder, long id) { builder.AddLong(0, id, 0); }
   public static void AddDevName(FlatBufferBuilder builder, StringOffset devNameOffset) { builder.AddOffset(1, devNameOffset.Value, 0); }
   public static void AddCostumeGroupId(FlatBufferBuilder builder, long costumeGroupId) { builder.AddLong(2, costumeGroupId, 0); }
@@ -307,36 +307,36 @@ public struct CharacterExcel : IFlatbufferObject
   public static VectorOffset CreateEquipmentSlotVectorBlock(FlatBufferBuilder builder, ArraySegment<Plana.FlatData.EquipmentCategory> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateEquipmentSlotVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<Plana.FlatData.EquipmentCategory>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartEquipmentSlotVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddWeaponLocalizeId(FlatBufferBuilder builder, uint weaponLocalizeId) { builder.AddUint(38, weaponLocalizeId, 0); }
-  public static void AddDisplayEnemyInfo(FlatBufferBuilder builder, bool displayEnemyInfo) { builder.AddBool(39, displayEnemyInfo, false); }
-  public static void AddBodyRadius(FlatBufferBuilder builder, long bodyRadius) { builder.AddLong(40, bodyRadius, 0); }
-  public static void AddRandomEffectRadius(FlatBufferBuilder builder, long randomEffectRadius) { builder.AddLong(41, randomEffectRadius, 0); }
-  public static void AddHPBarHide(FlatBufferBuilder builder, bool hPBarHide) { builder.AddBool(42, hPBarHide, false); }
-  public static void AddHpBarHeight(FlatBufferBuilder builder, float hpBarHeight) { builder.AddFloat(43, hpBarHeight, 0.0f); }
-  public static void AddHighlightFloaterHeight(FlatBufferBuilder builder, float highlightFloaterHeight) { builder.AddFloat(44, highlightFloaterHeight, 0.0f); }
-  public static void AddEmojiOffsetX(FlatBufferBuilder builder, float emojiOffsetX) { builder.AddFloat(45, emojiOffsetX, 0.0f); }
-  public static void AddEmojiOffsetY(FlatBufferBuilder builder, float emojiOffsetY) { builder.AddFloat(46, emojiOffsetY, 0.0f); }
-  public static void AddMoveStartFrame(FlatBufferBuilder builder, int moveStartFrame) { builder.AddInt(47, moveStartFrame, 0); }
-  public static void AddMoveEndFrame(FlatBufferBuilder builder, int moveEndFrame) { builder.AddInt(48, moveEndFrame, 0); }
-  public static void AddJumpMotionFrame(FlatBufferBuilder builder, int jumpMotionFrame) { builder.AddInt(49, jumpMotionFrame, 0); }
-  public static void AddAppearFrame(FlatBufferBuilder builder, int appearFrame) { builder.AddInt(50, appearFrame, 0); }
-  public static void AddCanMove(FlatBufferBuilder builder, bool canMove) { builder.AddBool(51, canMove, false); }
-  public static void AddCanFix(FlatBufferBuilder builder, bool canFix) { builder.AddBool(52, canFix, false); }
-  public static void AddCanCrowdControl(FlatBufferBuilder builder, bool canCrowdControl) { builder.AddBool(53, canCrowdControl, false); }
-  public static void AddCanBattleItemMove(FlatBufferBuilder builder, bool canBattleItemMove) { builder.AddBool(54, canBattleItemMove, false); }
-  public static void AddIsAirUnit(FlatBufferBuilder builder, bool isAirUnit) { builder.AddBool(55, isAirUnit, false); }
-  public static void AddAirUnitHeight(FlatBufferBuilder builder, long airUnitHeight) { builder.AddLong(56, airUnitHeight, 0); }
-  public static void AddTags(FlatBufferBuilder builder, VectorOffset tagsOffset) { builder.AddOffset(57, tagsOffset.Value, 0); }
+  public static void AddWeaponLocalizeId(FlatBufferBuilder builder, uint weaponLocalizeId) { builder.AddUint(39, weaponLocalizeId, 0); }
+  public static void AddDisplayEnemyInfo(FlatBufferBuilder builder, bool displayEnemyInfo) { builder.AddBool(40, displayEnemyInfo, false); }
+  public static void AddBodyRadius(FlatBufferBuilder builder, long bodyRadius) { builder.AddLong(41, bodyRadius, 0); }
+  public static void AddRandomEffectRadius(FlatBufferBuilder builder, long randomEffectRadius) { builder.AddLong(42, randomEffectRadius, 0); }
+  public static void AddHPBarHide(FlatBufferBuilder builder, bool hPBarHide) { builder.AddBool(43, hPBarHide, false); }
+  public static void AddHpBarHeight(FlatBufferBuilder builder, float hpBarHeight) { builder.AddFloat(44, hpBarHeight, 0.0f); }
+  public static void AddHighlightFloaterHeight(FlatBufferBuilder builder, float highlightFloaterHeight) { builder.AddFloat(45, highlightFloaterHeight, 0.0f); }
+  public static void AddEmojiOffsetX(FlatBufferBuilder builder, float emojiOffsetX) { builder.AddFloat(46, emojiOffsetX, 0.0f); }
+  public static void AddEmojiOffsetY(FlatBufferBuilder builder, float emojiOffsetY) { builder.AddFloat(47, emojiOffsetY, 0.0f); }
+  public static void AddMoveStartFrame(FlatBufferBuilder builder, int moveStartFrame) { builder.AddInt(48, moveStartFrame, 0); }
+  public static void AddMoveEndFrame(FlatBufferBuilder builder, int moveEndFrame) { builder.AddInt(49, moveEndFrame, 0); }
+  public static void AddJumpMotionFrame(FlatBufferBuilder builder, int jumpMotionFrame) { builder.AddInt(50, jumpMotionFrame, 0); }
+  public static void AddAppearFrame(FlatBufferBuilder builder, int appearFrame) { builder.AddInt(51, appearFrame, 0); }
+  public static void AddCanMove(FlatBufferBuilder builder, bool canMove) { builder.AddBool(52, canMove, false); }
+  public static void AddCanFix(FlatBufferBuilder builder, bool canFix) { builder.AddBool(53, canFix, false); }
+  public static void AddCanCrowdControl(FlatBufferBuilder builder, bool canCrowdControl) { builder.AddBool(54, canCrowdControl, false); }
+  public static void AddCanBattleItemMove(FlatBufferBuilder builder, bool canBattleItemMove) { builder.AddBool(55, canBattleItemMove, false); }
+  public static void AddIsAirUnit(FlatBufferBuilder builder, bool isAirUnit) { builder.AddBool(56, isAirUnit, false); }
+  public static void AddAirUnitHeight(FlatBufferBuilder builder, long airUnitHeight) { builder.AddLong(57, airUnitHeight, 0); }
+  public static void AddTags(FlatBufferBuilder builder, VectorOffset tagsOffset) { builder.AddOffset(58, tagsOffset.Value, 0); }
   public static VectorOffset CreateTagsVector(FlatBufferBuilder builder, Plana.FlatData.Tag[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddInt((int)data[i]); return builder.EndVector(); }
   public static VectorOffset CreateTagsVectorBlock(FlatBufferBuilder builder, Plana.FlatData.Tag[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateTagsVectorBlock(FlatBufferBuilder builder, ArraySegment<Plana.FlatData.Tag> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateTagsVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<Plana.FlatData.Tag>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartTagsVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddSecretStoneItemId(FlatBufferBuilder builder, long secretStoneItemId) { builder.AddLong(58, secretStoneItemId, 0); }
-  public static void AddSecretStoneItemAmount(FlatBufferBuilder builder, int secretStoneItemAmount) { builder.AddInt(59, secretStoneItemAmount, 0); }
-  public static void AddCharacterPieceItemId(FlatBufferBuilder builder, long characterPieceItemId) { builder.AddLong(60, characterPieceItemId, 0); }
-  public static void AddCharacterPieceItemAmount(FlatBufferBuilder builder, int characterPieceItemAmount) { builder.AddInt(61, characterPieceItemAmount, 0); }
-  public static void AddCombineRecipeId(FlatBufferBuilder builder, long combineRecipeId) { builder.AddLong(62, combineRecipeId, 0); }
+  public static void AddSecretStoneItemId(FlatBufferBuilder builder, long secretStoneItemId) { builder.AddLong(59, secretStoneItemId, 0); }
+  public static void AddSecretStoneItemAmount(FlatBufferBuilder builder, int secretStoneItemAmount) { builder.AddInt(60, secretStoneItemAmount, 0); }
+  public static void AddCharacterPieceItemId(FlatBufferBuilder builder, long characterPieceItemId) { builder.AddLong(61, characterPieceItemId, 0); }
+  public static void AddCharacterPieceItemAmount(FlatBufferBuilder builder, int characterPieceItemAmount) { builder.AddInt(62, characterPieceItemAmount, 0); }
+  public static void AddCombineRecipeId(FlatBufferBuilder builder, long combineRecipeId) { builder.AddLong(63, combineRecipeId, 0); }
   public static Offset<Plana.FlatData.CharacterExcel> EndCharacterExcel(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<Plana.FlatData.CharacterExcel>(o);

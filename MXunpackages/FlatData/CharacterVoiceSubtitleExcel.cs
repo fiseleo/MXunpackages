@@ -79,7 +79,7 @@ public struct CharacterVoiceSubtitleExcel : IFlatbufferObject
     return _o;
   }
   public void UnPackTo(CharacterVoiceSubtitleExcelT _o) {
-        byte[] key = TableEncryptionService.CreateKey("CharacterVoiceSubtitle");
+		byte[] key = TableEncryptionService.CreateKey("CharacterVoiceSubtitle");
     _o.LocalizeCVGroup = TableEncryptionService.Convert(this.LocalizeCVGroup, key);
     _o.CharacterVoiceGroupId = TableEncryptionService.Convert(this.CharacterVoiceGroupId, key);
     _o.Duration = TableEncryptionService.Convert(this.Duration, key);

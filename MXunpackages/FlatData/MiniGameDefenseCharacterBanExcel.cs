@@ -45,7 +45,7 @@ public struct MiniGameDefenseCharacterBanExcel : IFlatbufferObject
     return _o;
   }
   public void UnPackTo(MiniGameDefenseCharacterBanExcelT _o) {
-        byte[] key = TableEncryptionService.CreateKey("MiniGameDefenseCharacterBan");
+		byte[] key = TableEncryptionService.CreateKey("MiniGameDefenseCharacterBan");
     _o.EventContentId = TableEncryptionService.Convert(this.EventContentId, key);
     _o.CharacterId = TableEncryptionService.Convert(this.CharacterId, key);
   }

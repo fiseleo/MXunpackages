@@ -97,7 +97,7 @@ public struct MiniGameDefenseFixedStatExcel : IFlatbufferObject
     return _o;
   }
   public void UnPackTo(MiniGameDefenseFixedStatExcelT _o) {
-        byte[] key = TableEncryptionService.CreateKey("MiniGameDefenseFixedStat");
+		byte[] key = TableEncryptionService.CreateKey("MiniGameDefenseFixedStat");
     _o.MinigameDefenseFixedStatId = TableEncryptionService.Convert(this.MinigameDefenseFixedStatId, key);
     _o.Level = TableEncryptionService.Convert(this.Level, key);
     _o.Grade = TableEncryptionService.Convert(this.Grade, key);

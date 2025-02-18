@@ -87,7 +87,7 @@ public struct VoiceTimelineExcel : IFlatbufferObject
     return _o;
   }
   public void UnPackTo(VoiceTimelineExcelT _o) {
-        byte[] key = TableEncryptionService.CreateKey("VoiceTimeline");
+		byte[] key = TableEncryptionService.CreateKey("VoiceTimeline");
     _o.UniqueId = TableEncryptionService.Convert(this.UniqueId, key);
     _o.Id = TableEncryptionService.Convert(this.Id, key);
     _o.Nation_ = new List<Plana.FlatData.Nation>();

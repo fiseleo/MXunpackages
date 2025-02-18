@@ -31,7 +31,7 @@ public struct ScenarioContentCollectionExcel : IFlatbufferObject
   public ArraySegment<byte>? GetUnlockConditionParameterBytes() { return __p.__vector_as_arraysegment(10); }
 #endif
   public long[] GetUnlockConditionParameterArray() { return __p.__vector_as_array<long>(10); }
-  public Plana.FlatData.MultipleConditionCheckType MultipleConditionCheckType_ { get { int o = __p.__offset(12); return o != 0 ? (Plana.FlatData.MultipleConditionCheckType)__p.bb.GetInt(o + __p.bb_pos) : Plana.FlatData.MultipleConditionCheckType.And; } }
+  public Plana.FlatData.MultipleConditionCheckType MultipleConditionCheckType { get { int o = __p.__offset(12); return o != 0 ? (Plana.FlatData.MultipleConditionCheckType)__p.bb.GetInt(o + __p.bb_pos) : Plana.FlatData.MultipleConditionCheckType.And; } }
   public long UnlockConditionCount { get { int o = __p.__offset(14); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
   public bool IsObject { get { int o = __p.__offset(16); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
   public bool IsHorizon { get { int o = __p.__offset(18); return o != 0 ? 0!=__p.bb.Get(o + __p.bb_pos) : (bool)false; } }
@@ -70,7 +70,7 @@ public struct ScenarioContentCollectionExcel : IFlatbufferObject
       long GroupId = 0,
       Plana.FlatData.CollectionUnlockType UnlockConditionType = Plana.FlatData.CollectionUnlockType.None,
       VectorOffset UnlockConditionParameterOffset = default(VectorOffset),
-      Plana.FlatData.MultipleConditionCheckType MultipleConditionCheckType_ = Plana.FlatData.MultipleConditionCheckType.And,
+      Plana.FlatData.MultipleConditionCheckType MultipleConditionCheckType = Plana.FlatData.MultipleConditionCheckType.And,
       long UnlockConditionCount = 0,
       bool IsObject = false,
       bool IsHorizon = false,
@@ -88,7 +88,7 @@ public struct ScenarioContentCollectionExcel : IFlatbufferObject
     ScenarioContentCollectionExcel.AddFullResource(builder, FullResourceOffset);
     ScenarioContentCollectionExcel.AddThumbResource(builder, ThumbResourceOffset);
     ScenarioContentCollectionExcel.AddEmblemResource(builder, EmblemResourceOffset);
-    ScenarioContentCollectionExcel.AddMultipleConditionCheckType_(builder, MultipleConditionCheckType_);
+    ScenarioContentCollectionExcel.AddMultipleConditionCheckType(builder, MultipleConditionCheckType);
     ScenarioContentCollectionExcel.AddUnlockConditionParameter(builder, UnlockConditionParameterOffset);
     ScenarioContentCollectionExcel.AddUnlockConditionType(builder, UnlockConditionType);
     ScenarioContentCollectionExcel.AddIsHorizon(builder, IsHorizon);
@@ -106,7 +106,7 @@ public struct ScenarioContentCollectionExcel : IFlatbufferObject
   public static VectorOffset CreateUnlockConditionParameterVectorBlock(FlatBufferBuilder builder, ArraySegment<long> data) { builder.StartVector(8, data.Count, 8); builder.Add(data); return builder.EndVector(); }
   public static VectorOffset CreateUnlockConditionParameterVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<long>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartUnlockConditionParameterVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(8, numElems, 8); }
-  public static void AddMultipleConditionCheckType_(FlatBufferBuilder builder, Plana.FlatData.MultipleConditionCheckType multipleConditionCheckType_) { builder.AddInt(4, (int)multipleConditionCheckType_, 0); }
+  public static void AddMultipleConditionCheckType(FlatBufferBuilder builder, Plana.FlatData.MultipleConditionCheckType multipleConditionCheckType) { builder.AddInt(4, (int)multipleConditionCheckType, 0); }
   public static void AddUnlockConditionCount(FlatBufferBuilder builder, long unlockConditionCount) { builder.AddLong(5, unlockConditionCount, 0); }
   public static void AddIsObject(FlatBufferBuilder builder, bool isObject) { builder.AddBool(6, isObject, false); }
   public static void AddIsHorizon(FlatBufferBuilder builder, bool isHorizon) { builder.AddBool(7, isHorizon, false); }
@@ -125,13 +125,13 @@ public struct ScenarioContentCollectionExcel : IFlatbufferObject
     return _o;
   }
   public void UnPackTo(ScenarioContentCollectionExcelT _o) {
-        byte[] key = TableEncryptionService.CreateKey("ScenarioContentCollection");
+		byte[] key = TableEncryptionService.CreateKey("ScenarioContentCollection");
     _o.Id = TableEncryptionService.Convert(this.Id, key);
     _o.GroupId = TableEncryptionService.Convert(this.GroupId, key);
     _o.UnlockConditionType = TableEncryptionService.Convert(this.UnlockConditionType, key);
     _o.UnlockConditionParameter = new List<long>();
     for (var _j = 0; _j < this.UnlockConditionParameterLength; ++_j) {_o.UnlockConditionParameter.Add(TableEncryptionService.Convert(this.UnlockConditionParameter(_j), key));}
-    _o.MultipleConditionCheckType_ = TableEncryptionService.Convert(this.MultipleConditionCheckType_, key);
+    _o.MultipleConditionCheckType = TableEncryptionService.Convert(this.MultipleConditionCheckType, key);
     _o.UnlockConditionCount = TableEncryptionService.Convert(this.UnlockConditionCount, key);
     _o.IsObject = TableEncryptionService.Convert(this.IsObject, key);
     _o.IsHorizon = TableEncryptionService.Convert(this.IsHorizon, key);
@@ -158,7 +158,7 @@ public struct ScenarioContentCollectionExcel : IFlatbufferObject
       _o.GroupId,
       _o.UnlockConditionType,
       _UnlockConditionParameter,
-      _o.MultipleConditionCheckType_,
+      _o.MultipleConditionCheckType,
       _o.UnlockConditionCount,
       _o.IsObject,
       _o.IsHorizon,
@@ -176,7 +176,7 @@ public class ScenarioContentCollectionExcelT
   public long GroupId { get; set; }
   public Plana.FlatData.CollectionUnlockType UnlockConditionType { get; set; }
   public List<long> UnlockConditionParameter { get; set; }
-  public Plana.FlatData.MultipleConditionCheckType MultipleConditionCheckType_ { get; set; }
+  public Plana.FlatData.MultipleConditionCheckType MultipleConditionCheckType { get; set; }
   public long UnlockConditionCount { get; set; }
   public bool IsObject { get; set; }
   public bool IsHorizon { get; set; }
@@ -191,7 +191,7 @@ public class ScenarioContentCollectionExcelT
     this.GroupId = 0;
     this.UnlockConditionType = Plana.FlatData.CollectionUnlockType.None;
     this.UnlockConditionParameter = null;
-    this.MultipleConditionCheckType_ = Plana.FlatData.MultipleConditionCheckType.And;
+    this.MultipleConditionCheckType = Plana.FlatData.MultipleConditionCheckType.And;
     this.UnlockConditionCount = 0;
     this.IsObject = false;
     this.IsHorizon = false;
@@ -213,7 +213,7 @@ static public class ScenarioContentCollectionExcelVerify
       && verifier.VerifyField(tablePos, 6 /*GroupId*/, 8 /*long*/, 8, false)
       && verifier.VerifyField(tablePos, 8 /*UnlockConditionType*/, 4 /*Plana.FlatData.CollectionUnlockType*/, 4, false)
       && verifier.VerifyVectorOfData(tablePos, 10 /*UnlockConditionParameter*/, 8 /*long*/, false)
-      && verifier.VerifyField(tablePos, 12 /*MultipleConditionCheckType_*/, 4 /*Plana.FlatData.MultipleConditionCheckType*/, 4, false)
+      && verifier.VerifyField(tablePos, 12 /*MultipleConditionCheckType*/, 4 /*Plana.FlatData.MultipleConditionCheckType*/, 4, false)
       && verifier.VerifyField(tablePos, 14 /*UnlockConditionCount*/, 8 /*long*/, 8, false)
       && verifier.VerifyField(tablePos, 16 /*IsObject*/, 1 /*bool*/, 1, false)
       && verifier.VerifyField(tablePos, 18 /*IsHorizon*/, 1 /*bool*/, 1, false)
